@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    background: #4A628A;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: Outfit;
+    color: #B9E5E8;
+}
+
+main {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5%;
+    background-color: #7AB2D3;
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    min-height: 600px;
+}
+
+.container article {
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.container article h2 {
+    font-family: Outfit, sans-serif;
+    color: #DFF2EB;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.container article p {
+    font-family: Outfit, sans-serif;
+    font-weight: bold;
+    color: #DFF2EB;
+
+}
+
+.input-box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25%;
+    margin-bottom: auto;
+}
+
+.input-box label{
+    margin-bottom: 10px;
+    font-family: Outfit,sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #DFF2EB;
+}
+
+.input-box input {
+    width: 300px;
+    height: 2rem;
+}
+
+.input-box button {
+    margin-top: 10px;
+    text-decoration: none;
+    align-items: center;
+    font-family: Outfit, sans-serif;
+    padding: 10px 15px;
+    background-color: #4A628A;
+    border: none;
+    color: #DFF2EB;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.input-box button:hover{
+    transform: scale(1.1);
+    background-color: #2E3135;
+}
+
+.container #copyright {
+    font-family: Outfit, sans-serif;
+    font-weight: bold;
+    color: #DFF2EB;
+    position: absolute;
+    bottom: 10px;
+    align-items: center;
+}
+
+footer {
+    background: #4A628A;
+    text-align: center;
+    padding: 20px;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+footer div a, footer div p {
+    text-decoration: none;
+    color: #7AB2D3;
+    font-size: 1.5rem;
+    font-family: Outfit;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+
+.footer-text>a:hover{
+    transform: scale(1.1);
+    background-color: #465D81;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.footer-text>p:hover{
+    transform: scale(1.1);
+    background-color: #465D81;
+    padding: 10px;
+    border-radius: 20px;
+}
