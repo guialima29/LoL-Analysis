@@ -1,5 +1,4 @@
-# LoL-Analysis (Not finished)
-<h1>LoL Analysis is a educacional project to scrapping infos about champions of League Of Legends</h1> 
+# LoL-Analysis: Educacional project to scrapping infos about champions of League Of Legends (Not finished)
 
 <h2>Technologies used:</h2>
 <ul>
