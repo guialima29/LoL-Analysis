@@ -1,22 +1,28 @@
-from typing import Union
+from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from core.system import System
 
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="templates"), name="static")
 
-# @app.get("/")
-# def read_root():
-#     return {"Hello": "Opa"}
+@app.get('/')
+async def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/items/{item_id}", response_class=HTMLResponse)
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q} 
+@app.get("/champion/{name}", response_class=HTMLResponse)
+async def champion_info(request: Request, name: str):
+    champion_data = System(name)
 
-async def read_item(request: Request, id: str):
-    return templates.TemplateResponse(
-        request=request, name="index.html", context={"id": id}
-    )
+    if not champion_data.info or not champion_data.quotes:
+        return HTMLResponse(content="Erro ao buscar informações do campeão.", status_code=500)
+
+    return templates.TemplateResponse("champion.html", {
+        "request": request,
+        "name": name,
+        "info": champion_data.info,
+        "quotes": champion_data.quotes
+    })

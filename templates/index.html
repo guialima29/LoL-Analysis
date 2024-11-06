@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/index.css">
+    <link href="{{ url_for('static', path='./style/index.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -22,10 +23,12 @@
                 <p>Type a champion name to get all infos!</p>
                 <p>(all informations are from op.gg)</p>
             </article>
-            <div class="input-box">
-                <Label>Enter a name: </Label><br><input type="text" placeholder="Ex: aatrox">
-                <button type="submit">Enter</button>
-            </div>
+            <form id="form" class="input-box">
+                <label>Enter a name:</label>
+                <br>
+                <input type="text" id="name" placeholder="Ex: aatrox">
+                <button type="submit" value="Submit">Enter</button>
+            </form>
             <p id="copyright">© 2024 Guilherme Augusto</p>
         </div>
     </main>
@@ -36,5 +39,13 @@
             <p><i class="ph ph-discord-logo"></i> Discord: gui.alima</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('form').onsubmit = function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            window.location.href = `/champion/${name}`;
+        };
+    </script>
 </body>
 </html>
